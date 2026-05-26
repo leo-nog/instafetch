@@ -2,6 +2,7 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+session.json
 accounts.json
 banned_accounts.txt
 active_account.txt
