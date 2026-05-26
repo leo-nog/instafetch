@@ -1,0 +1,12 @@
+{
+  "accounts": [
+    {
+      "ig_username": "account_1",
+      "ig_password": "password_1"
+    },
+    {
+      "ig_username": "account_2",
+      "ig_password": "password_2"
+    }
+  ]
+}

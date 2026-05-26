@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+accounts.json
+banned_accounts.txt
+active_account.txt
+sessions/
+media/
