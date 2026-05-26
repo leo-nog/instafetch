@@ -9,6 +9,19 @@ Python CLI to download all photos from an Instagram profile using [instagrapi](h
 
 ## Installation
 
+### Linux / macOS
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cp accounts.example.json accounts.json
+```
+
+Edit `accounts.json` with your Instagram credentials.
+
+### Windows
+
 ```powershell
 python -m venv .venv
 .venv\Scripts\pip install -r requirements.txt
@@ -17,7 +30,7 @@ copy accounts.example.json accounts.json
 
 Edit `accounts.json` with your Instagram credentials.
 
-### Windows: venv activation error in PowerShell
+#### Windows: venv activation error in PowerShell
 
 If you see *"running scripts is disabled on this system"*, use one of these options:
 
@@ -45,26 +58,43 @@ After that, `.venv\Scripts\activate` works in PowerShell.
 
 ## Usage
 
+Photos are saved to `media/instagram_user/`. The active account session is stored in `sessions/<ig_username>.json`.
+
+### Linux / macOS
+
+With the venv activated:
+
+```bash
+python instafetch.py fetch --profile instagram_user
+python instafetch.py accounts
+python instafetch.py unban account_1
+```
+
+Without activating the venv:
+
+```bash
+.venv/bin/python instafetch.py fetch --profile instagram_user
+.venv/bin/python instafetch.py accounts
+.venv/bin/python instafetch.py unban account_1
+```
+
+### Windows
+
 ```powershell
 .venv\Scripts\python.exe instafetch.py fetch --profile instagram_user
+.venv\Scripts\python.exe instafetch.py accounts
+.venv\Scripts\python.exe instafetch.py unban account_1
 ```
 
 With cmd and the venv activated: `python instafetch.py fetch --profile instagram_user`.
 
-Photos are saved to `media/instagram_user/`. The active account session is stored in `sessions/<ig_username>.json`.
-
 ### Commands
 
-```powershell
-# Download photos from a profile
-.venv\Scripts\python.exe instafetch.py fetch --profile instagram_user
-
-# List accounts with status
-.venv\Scripts\python.exe instafetch.py accounts
-
-# Remove account from the banned list
-.venv\Scripts\python.exe instafetch.py unban account_1
-```
+| Command | Description |
+|---------|-------------|
+| `fetch --profile <user>` | Download photos from a profile |
+| `accounts` | List accounts with status flags |
+| `unban <username>` | Remove account from the banned list |
 
 `accounts` output:
 
